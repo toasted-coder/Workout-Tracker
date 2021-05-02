@@ -50,14 +50,14 @@ router.post("/:id", (req, res) => {
 
 router.put("/:id", ({ body, params }, res) => {
   const workoutId = params.id;
-  let savedExercises = [];
+  let storedExercises = [];
 
   workout
     .find({ _id: workoutId })
     .then((dbworkout) => {
-      savedExercises = dbworkout[0].exercises;
+      storedExercises = dbworkout[0].exercises;
       res.json(dbworkout[0].exercises);
-      let allExercises = [...savedExercises, body];
+      let allExercises = [...storedExercises, body];
       console.log(allExercises);
       updateworkout(allExercises);
     })

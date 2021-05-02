@@ -1,4 +1,4 @@
-const routeer = require("express");
+const router = require("express");
 const path = require("path");
 
 router.get("/exercise", (req, res) => {
